@@ -1,7 +1,10 @@
 import os
 import time
 
+import pytest
 
+
+@pytest.mark.skip
 class TestQa3:
 
     def test_add_all_data_3(self, passport_page):

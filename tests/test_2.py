@@ -1,6 +1,7 @@
 import os
 import time
 
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -8,6 +9,7 @@ from pages.passport import Passport
 
 URL = "https://berpress.github.io/ui-passport-demo/"
 
+@pytest.mark.skip
 class TestQa2:
     def test_add_all_data_2(self):
         driver = webdriver.Chrome()

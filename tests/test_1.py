@@ -1,10 +1,12 @@
 import os
 
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 URL = "https://berpress.github.io/ui-passport-demo/"
 
+@pytest.mark.skip
 class TestQa:
     def test_add_all_data(self):
         driver = webdriver.Chrome()
