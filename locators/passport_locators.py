@@ -8,3 +8,4 @@ class PassportLocators:
     ABOUT = (By.ID, "about")
     PHOTO = (By.ID, "photo")
     SAVE_BUTTON = (By.XPATH, "//button[@data-test='submit-button']")
+    USER_TABLE = (By.ID, "userTable")

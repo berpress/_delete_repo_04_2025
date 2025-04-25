@@ -41,3 +41,6 @@ class BasePage:
         """
         element = self._find_element(locator, wait_time)
         return element.text
+
+    def len_table(self, locator):
+        pass

@@ -1,3 +1,4 @@
+import logging
 import random
 
 import pytest
@@ -7,6 +8,8 @@ from selenium.webdriver.chrome.options import Options
 from pages.passport import Passport
 from pages.passport_1 import Passport2
 from pages.passport_2 import Passport3
+
+logger = logging.getLogger("qa")
 
 
 def pytest_addoption(parser):
@@ -19,6 +22,7 @@ def pytest_addoption(parser):
 def passport_page(request):
     url = request.config.getoption("--url")
     is_headless = request.config.getoption("--headless")
+    logger.info(f'Start app, url {url}, headless mode: {is_headless}')
     chrome_options = Options()
     chrome_options.add_argument("--window-size=1920,1080")
     if is_headless:
@@ -27,6 +31,7 @@ def passport_page(request):
     driver = webdriver.Chrome(options=chrome_options)
     driver.get(url)
     yield Passport3(driver)
+    logger.info(f'Stop app')
     driver.quit()
 
 @pytest.fixture(scope="function")
